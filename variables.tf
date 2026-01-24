@@ -7,7 +7,7 @@ variable "release_name" {
 variable "namespace" {
   description = "Kubernetes namespace for Carbon Intensity Exporter"
   type        = string
-  default     = "kube-system"
+  default     = "carbon-intensity-exporter"
 }
 
 variable "chart_version" {
