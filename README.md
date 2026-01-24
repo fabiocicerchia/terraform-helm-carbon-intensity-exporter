@@ -1,6 +1,20 @@
-# Carbon Intensity Exporter Module
+# Terraform Module for Carbon Intensity Exporter
 
 Terraform module to deploy Kubernetes Carbon Intensity Exporter on Kubernetes using Helm.
+
+## Why This Matters
+
+Electricity grids vary dramatically in carbon intensity depending on time and location. The same workload can have radically different environmental impacts depending on when and where it runs—solar-powered compute at noon versus coal-fired electricity at night.
+
+Carbon Intensity Exporter enables:
+
+* ⏰ **Time-aware scheduling** based on grid cleanliness forecasts
+* 🌍 **Location-aware placement** to prefer lower-carbon regions
+* 🔌 **Grid-responsive workloads** that shift to cleaner electricity windows
+* 📉 **Carbon-aware autoscaling** decisions
+* 🐚 **Integration with Kubernetes** scheduling and placement logic
+
+By making real-time grid carbon intensity data available to Kubernetes, workloads can automatically optimise for environmental impact—reducing emissions without sacrificing functionality.
 
 ## Overview
 
@@ -41,7 +55,7 @@ module "carbon_intensity_exporter" {
 
 ## Requirements
 
-- Terraform >= 1.0
+- Terraform >= 1.0 or OpenTofu >= 1.6
 - Helm >= 2.0
 - Kubernetes v1.24+
 - kubectl configured to access your cluster
