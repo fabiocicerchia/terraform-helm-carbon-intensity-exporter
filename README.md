@@ -15,7 +15,7 @@ The Kubernetes Carbon Intensity Exporter retrieves carbon intensity data from th
 
 ```hcl
 module "carbon_intensity_exporter" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-carbon-intensity-exporter.git?ref=main"
+  source = "fabiocicerchia/carbon-intensity-exporter/helm"
 
   release_name    = "carbon-intensity-exporter"
   namespace       = "kube-system"
@@ -53,7 +53,7 @@ module "carbon_intensity_exporter" {
 
 ```hcl
 module "carbon_intensity_exporter" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-carbon-intensity-exporter.git?ref=main"
+  source = "fabiocicerchia/carbon-intensity-exporter/helm"
 
   namespace = "kube-system"
   values = {
@@ -72,7 +72,7 @@ module "carbon_intensity_exporter" {
 
 ```hcl
 module "carbon_intensity_exporter" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-carbon-intensity-exporter.git?ref=main"
+  source = "fabiocicerchia/carbon-intensity-exporter/helm"
 
   namespace = "kube-system"
   values = {
@@ -93,7 +93,7 @@ module "carbon_intensity_exporter" {
 
 ```hcl
 module "carbon_intensity_exporter" {
-  source = "git::https://github.com/fabiocicerchia/terraform-helm-carbon-intensity-exporter.git?ref=main"
+  source = "fabiocicerchia/carbon-intensity-exporter/helm"
 
   chart_version = "0.4.0"
 }
