@@ -9,7 +9,14 @@ module "carbon_intensity_exporter" {
   namespace     = "kube-system"
   chart_version = ""
   
-  # values = yamlencode({
-  #   # Add your custom values here
-  # })
+  values = yamlencode({
+    providerName = "WattTime"
+    electricityMaps = {
+      apiToken = "token" # Replace with your actual API token
+    }
+    wattTime = {
+      username = "username" # Replace with your actual username
+      password = "password" # Replace with your actual password
+    }
+  })
 }

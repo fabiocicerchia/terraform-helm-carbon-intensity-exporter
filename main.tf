@@ -9,5 +9,10 @@ resource "helm_release" "carbon_intensity_exporter" {
   namespace         = var.namespace
   replace           = true
 
-  values = [yamlencode(var.values)]
+  values = [yamlencode(merge(
+    {
+      namespace = var.namespace
+    },
+    var.values
+  ))]
 }
