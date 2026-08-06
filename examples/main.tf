@@ -8,7 +8,7 @@ module "carbon_intensity_exporter" {
   release_name  = "carbon-intensity-exporter"
   namespace     = "kube-system"
   chart_version = ""
-  
+
   values = yamlencode({
     providerName = "WattTime"
     electricityMaps = {
