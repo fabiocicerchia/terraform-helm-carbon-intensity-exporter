@@ -8,11 +8,11 @@ Electricity grids vary dramatically in carbon intensity depending on time and lo
 
 Carbon Intensity Exporter enables:
 
-* ⏰ **Time-aware scheduling** based on grid cleanliness forecasts
-* 🌍 **Location-aware placement** to prefer lower-carbon regions
-* 🔌 **Grid-responsive workloads** that shift to cleaner electricity windows
-* 📉 **Carbon-aware autoscaling** decisions
-* 🐚 **Integration with Kubernetes** scheduling and placement logic
+- ⏰ **Time-aware scheduling** based on grid cleanliness forecasts
+- 🌍 **Location-aware placement** to prefer lower-carbon regions
+- 🔌 **Grid-responsive workloads** that shift to cleaner electricity windows
+- 📉 **Carbon-aware autoscaling** decisions
+- 🐚 **Integration with Kubernetes** scheduling and placement logic
 
 By making real-time grid carbon intensity data available to Kubernetes, workloads can automatically optimise for environmental impact—reducing emissions without sacrificing functionality.
 
@@ -38,20 +38,20 @@ module "carbon_intensity_exporter" {
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| `release_name` | Helm release name for Carbon Intensity Exporter | `string` | `"carbon-intensity-exporter"` | no |
-| `namespace` | Kubernetes namespace for Carbon Intensity Exporter | `string` | `"kube-system"` | no |
-| `chart_version` | Helm chart version (empty string for latest) | `string` | `""` | no |
-| `values` | Helm values for Carbon Intensity Exporter deployment | `any` | See default values | no |
+| Name            | Description                                          | Type     | Default                       | Required |
+| --------------- | ---------------------------------------------------- | -------- | ----------------------------- | :------: |
+| `release_name`  | Helm release name for Carbon Intensity Exporter      | `string` | `"carbon-intensity-exporter"` | no       |
+| `namespace`     | Kubernetes namespace for Carbon Intensity Exporter   | `string` | `"kube-system"`               | no       |
+| `chart_version` | Helm chart version (empty string for latest)         | `string` | `""`                          | no       |
+| `values`        | Helm values for Carbon Intensity Exporter deployment | `any`    | See default values            | no       |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| `namespace` | Kubernetes namespace where Carbon Intensity Exporter is deployed |
-| `release_name` | Helm release name of Carbon Intensity Exporter |
-| `chart_version` | Chart version of Carbon Intensity Exporter deployment |
+| Name            | Description                                                      |
+| --------------- | ---------------------------------------------------------------- |
+| `namespace`     | Kubernetes namespace where Carbon Intensity Exporter is deployed |
+| `release_name`  | Helm release name of Carbon Intensity Exporter                   |
+| `chart_version` | Chart version of Carbon Intensity Exporter deployment            |
 
 ## Requirements
 
