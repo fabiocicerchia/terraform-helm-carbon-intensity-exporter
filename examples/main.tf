@@ -12,11 +12,28 @@ module "carbon_intensity_exporter" {
   values = yamlencode({
     providerName = "WattTime"
     electricityMaps = {
-      apiToken = "token" # Replace with your actual API token
+      apiToken = var.electricity_maps_api_token
     }
     wattTime = {
-      username = "username" # Replace with your actual username
-      password = "password" # Replace with your actual password
+      username = var.watt_time_username
+      password = var.watt_time_password
     }
   })
+}
+
+variable "electricity_maps_api_token" {
+  type        = string
+  description = "Electricity Maps API token."
+  sensitive   = true
+}
+
+variable "watt_time_username" {
+  type        = string
+  description = "WattTime API username."
+}
+
+variable "watt_time_password" {
+  type        = string
+  description = "WattTime API password."
+  sensitive   = true
 }
