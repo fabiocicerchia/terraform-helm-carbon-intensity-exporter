@@ -39,7 +39,7 @@ module "carbon_intensity_exporter" {
 ## Inputs
 
 | Name            | Description                                          | Type     | Default                       | Required |
-| --------------- | ---------------------------------------------------- | -------- | ----------------------------- | :------: |
+| --------------- | ---------------------------------------------------- | -------- | ----------------------------- | -------- |
 | `release_name`  | Helm release name for Carbon Intensity Exporter      | `string` | `"carbon-intensity-exporter"` | no       |
 | `namespace`     | Kubernetes namespace for Carbon Intensity Exporter   | `string` | `"kube-system"`               | no       |
 | `chart_version` | Helm chart version (empty string for latest)         | `string` | `""`                          | no       |
