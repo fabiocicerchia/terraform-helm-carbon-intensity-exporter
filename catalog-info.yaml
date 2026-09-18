@@ -1,0 +1,21 @@
+# Backstage catalog entry, read by paved's scorecard plugin.
+#
+# Every check paved scores is derived from this file alone — no cluster
+# access, no CI credentials. What is absent here is absent from the score.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-helm-carbon-intensity-exporter
+  description: >-
+      Terraform module to deploy Kubernetes Carbon Intensity Exporter on Kubernetes using Helm.
+  annotations:
+    github.com/project-slug: fabiocicerchia/terraform-helm-carbon-intensity-exporter
+    backstage.io/source-location: url:https://github.com/fabiocicerchia/terraform-helm-carbon-intensity-exporter/
+  links:
+    - url: https://github.com/fabiocicerchia/terraform-helm-carbon-intensity-exporter
+      title: Source
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/kodebeat
+  system: oss-tools
