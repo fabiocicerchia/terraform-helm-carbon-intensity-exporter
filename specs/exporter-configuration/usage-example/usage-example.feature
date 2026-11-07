@@ -8,7 +8,7 @@ Feature: Trying the module with the bundled usage example
   @id:exporter-configuration.usage-example.001 @rule:exporter.usage-example.chart-values-rejected-as-yaml-text @inferred @source:examples/main.tf#carbon_intensity_exporter @questionable
   Scenario: The usage example is refused because it passes chart values as YAML text instead of a map
     Given the example selects WattTime as the carbon data provider
-    And the example asks for release "carbon-intensity-exporter" in namespace "kube-system" on the latest chart
+    And the example asks for release "carbon-intensity-exporter" in namespace "kube-system" with no chart version pinned
     When the operator plans the example with credentials supplied
     Then planning stops with an error that the chart values must be a map or object
     And no exporter release is installed
@@ -21,12 +21,12 @@ Feature: Trying the module with the bundled usage example
     And WattTime username and password are also required
 
   @id:exporter-configuration.usage-example.003 @rule:exporter.usage-example.secret-credentials-hidden @inferred @source:examples/main.tf#watt_time_password
-  Scenario: Provider secrets in the usage example are hidden from plan output, while the WattTime username is shown
+  Scenario: Provider secrets in the usage example are marked sensitive, while the WattTime username is not
     Given the operator supplies an Electricity Maps token, a WattTime username and a WattTime password
-    When the operator plans the example
-    Then the Electricity Maps API token is shown as sensitive
-    And the WattTime password is shown as sensitive
-    And the WattTime username is shown in clear text
+    When Terraform reads the example's input variables
+    Then the Electricity Maps API token is treated as sensitive
+    And the WattTime password is treated as sensitive
+    And the WattTime username is not marked sensitive
 
   @id:exporter-configuration.usage-example.004 @rule:exporter.usage-example.reports-deployment-details @inferred @source:examples/outputs.tf#release_name
   Scenario: The usage example reports the release name, namespace and chart version of the deployed exporter

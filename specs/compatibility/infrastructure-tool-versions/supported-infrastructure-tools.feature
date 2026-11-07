@@ -6,7 +6,7 @@ Feature: Running the module on supported Terraform and OpenTofu versions
     Given the operator's configuration calls the carbon intensity exporter module
 
   @id:compatibility.infrastructure-tool-versions.001 @rule:compatibility.tooling.minimum-terraform-version @inferred @source:versions.tf#terraform
-  Scenario Outline: Only Terraform 1.0 or later, or OpenTofu 1.6 or later, can run the module
+  Scenario Outline: Only Terraform or OpenTofu version 1.0 or later can run the module
     Given the operator uses <tool> version <version>
     When the operator initialises the configuration
     Then initialisation <outcome>

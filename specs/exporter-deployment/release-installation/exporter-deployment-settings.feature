@@ -19,13 +19,14 @@ Feature: Choosing where and which exporter release is deployed
       | cie-prod      | kube-system     | cie-prod                  | kube-system               |
 
   @id:exporter-deployment.release-installation.002 @rule:exporter.deployment.chart-version-pinned-or-latest @inferred @source:variables.tf#chart_version
-  Scenario Outline: The exporter chart is pinned to the requested version, or the latest when none is given
+  Scenario Outline: The exporter chart is requested at the given version, or at no particular version when none is given
     Given the operator sets chart version to "<chart_version_input>"
     When the operator applies the module
-    Then the installed exporter chart is <installed_version>
+    Then the Helm release is installed from the bundled upstream exporter chart
+    And the Helm release asks for <requested_version>
 
     Examples:
-      | chart_version_input | installed_version            |
-      | (not set)           | the latest available version |
-      |                     | the latest available version |
-      | 0.3.0               | version 0.3.0                |
+      | chart_version_input | requested_version           |
+      | (not set)           | no particular chart version |
+      |                     | no particular chart version |
+      | 0.3.0               | chart version 0.3.0         |
