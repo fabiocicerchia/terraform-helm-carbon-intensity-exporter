@@ -27,11 +27,3 @@ Feature: Trying the module with the bundled usage example
     Then the Electricity Maps API token is treated as sensitive
     And the WattTime password is treated as sensitive
     And the WattTime username is not marked sensitive
-
-  @id:exporter-configuration.usage-example.004 @rule:exporter.usage-example.reports-deployment-details @inferred @source:examples/outputs.tf#release_name
-  Scenario: The usage example reports the release name, namespace and chart version of the deployed exporter
-    Given the exporter was deployed through the example
-    When the operator reads the example's outputs
-    Then "release_name" shows the Helm release name
-    And "namespace" shows the Kubernetes namespace
-    And "chart_version" shows the installed chart version

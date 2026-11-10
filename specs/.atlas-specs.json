@@ -162,7 +162,9 @@
   "terraform-helm-carbon-intensity-exporter/variables": [],
   "terraform-helm-carbon-intensity-exporter/versions": []
  },
- "retired": [],
+ "retired": [
+  "exporter-configuration.usage-example.004"
+ ],
  "scenarios": {
   "compatibility.helm-provider-requirement.001": {
    "file": "specs/compatibility/helm-provider-requirement/helm-provider-requirement.feature",
@@ -230,16 +232,6 @@
    "human": false,
    "rule": "exporter.usage-example.secret-credentials-hidden",
    "source": "examples/main.tf#watt_time_password",
-   "status": "inferred",
-   "test": "",
-   "tests": []
-  },
-  "exporter-configuration.usage-example.004": {
-   "file": "specs/exporter-configuration/usage-example/usage-example.feature",
-   "fingerprint": "73298f44022a",
-   "human": false,
-   "rule": "exporter.usage-example.reports-deployment-details",
-   "source": "examples/outputs.tf#release_name",
    "status": "inferred",
    "test": "",
    "tests": []

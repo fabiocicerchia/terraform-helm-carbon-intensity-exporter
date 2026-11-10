@@ -13,7 +13,7 @@ The tool and provider versions the module works with.
 Tailoring how the deployed exporter behaves and where it gets carbon-intensity data.
 
 - **Custom chart values**: [Customising the exporter's chart values](exporter-configuration/custom-values/exporter-custom-values.feature) (2)
-- **Usage example**: [Trying the module with the bundled usage example](exporter-configuration/usage-example/usage-example.feature) (4)
+- **Usage example**: [Trying the module with the bundled usage example](exporter-configuration/usage-example/usage-example.feature) (3)
 
 ## Exporter Deployment
 Installing the Carbon Intensity Exporter into a Kubernetes cluster as a Helm release.
