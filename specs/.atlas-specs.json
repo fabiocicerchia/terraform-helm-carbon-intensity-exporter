@@ -1,0 +1,364 @@
+{
+ "excluded": {
+  "examples/examples": [
+   {
+    "candidate": "Example declares required_version >= 1.0",
+    "covered_by": "",
+    "reason": "TECH_INFRA",
+    "source": "examples/main.tf#terraform"
+   },
+   {
+    "candidate": "Example sources the module from the parent directory",
+    "covered_by": "",
+    "reason": "TECH_DEVTOOLING",
+    "source": "examples/main.tf#carbon_intensity_exporter"
+   },
+   {
+    "candidate": "Empty chart_version installs the latest chart",
+    "covered_by": "root module chart-versioning (main.tf#helm_release.carbon_intensity_exporter)",
+    "reason": "INTERNAL_MECHANISM",
+    "source": "examples/main.tf#carbon_intensity_exporter"
+   },
+   {
+    "candidate": "Credential variables have descriptions and string types",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "examples/main.tf#watt_time_username"
+   }
+  ],
+  "terraform-helm-carbon-intensity-exporter/terraform-helm-carbon-intensity-exporter": [
+   {
+    "candidate": "Chart dependencies are updated before install (dependency_update = true)",
+    "covered_by": "",
+    "reason": "INTERNAL_MECHANISM",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "Values are YAML-encoded into a single values document",
+    "covered_by": "",
+    "reason": "INTERNAL_MECHANISM",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "Chart repository is the local .upstream/charts path rather than a remote repository",
+    "covered_by": "exporter.release.installed-from-bundled-chart-under-given-name",
+    "reason": "TECH_INFRA",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "Values merge is shallow (nested maps are not deep-merged)",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "The exporter is installed as a Helm release under the name the operator chose",
+    "covered_by": "",
+    "reason": "UNVERIFIABLE",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "Reinstalling under a name already in use replaces the existing release",
+    "covered_by": "",
+    "reason": "UNVERIFIABLE",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "The exporter's namespace is created when it does not exist yet",
+    "covered_by": "",
+    "reason": "UNVERIFIABLE",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "A given chart version is pinned and an empty version means the latest chart",
+    "covered_by": "",
+    "reason": "UNVERIFIABLE",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "Values the operator supplies reach the exporter chart",
+    "covered_by": "",
+    "reason": "UNVERIFIABLE",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   },
+   {
+    "candidate": "A namespace given in the operator's values overrides the one passed to the chart",
+    "covered_by": "",
+    "reason": "UNVERIFIABLE",
+    "source": "main.tf#helm_release.carbon_intensity_exporter"
+   }
+  ],
+  "terraform-helm-carbon-intensity-exporter/tflint": [
+   {
+    "candidate": "TFLint runs the terraform plugin with the 'all' preset",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": ".tflint.hcl#plugin \"terraform\""
+   },
+   {
+    "candidate": "Lint requires a declared Terraform version and declared required providers",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": ".tflint.hcl#rule \"terraform_required_version\""
+   },
+   {
+    "candidate": "Lint requires every variable and output to have a description",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": ".tflint.hcl#rule \"terraform_documented_variables\""
+   },
+   {
+    "candidate": "Lint requires every variable to declare a type",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": ".tflint.hcl#rule \"terraform_typed_variables\""
+   },
+   {
+    "candidate": "Lint enforces snake_case naming for declarations",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": ".tflint.hcl#rule \"terraform_naming_convention\""
+   },
+   {
+    "candidate": "Lint flags unused declarations",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": ".tflint.hcl#rule \"terraform_unused_declarations\""
+   },
+   {
+    "candidate": "Lint requires module sources to be pinned",
+    "covered_by": "",
+    "reason": "TECH_BUILD",
+    "source": ".tflint.hcl#rule \"terraform_module_pinned_source\""
+   }
+  ],
+  "terraform-helm-carbon-intensity-exporter/variables": [
+   {
+    "candidate": "Release name/namespace/chart_version/values are declared as typed inputs with descriptions",
+    "covered_by": "",
+    "reason": "TECH_DEVTOOLING",
+    "source": "variables.tf"
+   },
+   {
+    "candidate": "values accepts any type (no schema validation)",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "variables.tf#values"
+   }
+  ],
+  "terraform-helm-carbon-intensity-exporter/versions": [
+   {
+    "candidate": "Version-constraint comment in versions.tf restating the supported tools",
+    "covered_by": "",
+    "reason": "TRIVIAL",
+    "source": "versions.tf#terraform"
+   }
+  ]
+ },
+ "lifted": {
+  "examples/examples": [],
+  "terraform-helm-carbon-intensity-exporter/terraform-helm-carbon-intensity-exporter": [],
+  "terraform-helm-carbon-intensity-exporter/tflint": [],
+  "terraform-helm-carbon-intensity-exporter/variables": [],
+  "terraform-helm-carbon-intensity-exporter/versions": []
+ },
+ "retired": [
+  "exporter-configuration.usage-example.004"
+ ],
+ "scenarios": {
+  "compatibility.helm-provider-requirement.001": {
+   "file": "specs/compatibility/helm-provider-requirement/helm-provider-requirement.feature",
+   "fingerprint": "c4352a3c0676",
+   "human": false,
+   "rule": "compatibility.helm-provider.minimum-version",
+   "source": "versions.tf#terraform",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "compatibility.infrastructure-tool-versions.001": {
+   "file": "specs/compatibility/infrastructure-tool-versions/supported-infrastructure-tools.feature",
+   "fingerprint": "c4352a3c0676",
+   "human": false,
+   "rule": "compatibility.tooling.minimum-terraform-version",
+   "source": "versions.tf#terraform",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "exporter-configuration.custom-values.001": {
+   "file": "specs/exporter-configuration/custom-values/exporter-custom-values.feature",
+   "fingerprint": "97b1a7d14061",
+   "human": false,
+   "rule": "exporter.values.caller-values-merged-with-namespace",
+   "source": "variables.tf#values",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "exporter-configuration.custom-values.002": {
+   "file": "specs/exporter-configuration/custom-values/exporter-custom-values.feature",
+   "fingerprint": "97b1a7d14061",
+   "human": false,
+   "rule": "exporter.values.caller-namespace-value-overrides-module",
+   "source": "variables.tf#values",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "exporter-configuration.usage-example.001": {
+   "file": "specs/exporter-configuration/usage-example/usage-example.feature",
+   "fingerprint": "3f05c09a52a7",
+   "human": false,
+   "rule": "exporter.usage-example.chart-values-rejected-as-yaml-text",
+   "source": "examples/main.tf#carbon_intensity_exporter",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "exporter-configuration.usage-example.002": {
+   "file": "specs/exporter-configuration/usage-example/usage-example.feature",
+   "fingerprint": "168a14391cab",
+   "human": false,
+   "rule": "exporter.usage-example.requires-both-providers-credentials",
+   "source": "examples/main.tf#electricity_maps_api_token",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "exporter-configuration.usage-example.003": {
+   "file": "specs/exporter-configuration/usage-example/usage-example.feature",
+   "fingerprint": "9979bc1a2825",
+   "human": false,
+   "rule": "exporter.usage-example.secret-credentials-hidden",
+   "source": "examples/main.tf#watt_time_password",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "exporter-deployment.release-installation.001": {
+   "file": "specs/exporter-deployment/release-installation/exporter-deployment-settings.feature",
+   "fingerprint": "1d06cc8dad09",
+   "human": false,
+   "rule": "exporter.deployment.default-release-name-and-namespace",
+   "source": "variables.tf#namespace",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  },
+  "exporter-deployment.release-installation.002": {
+   "file": "specs/exporter-deployment/release-installation/exporter-deployment-settings.feature",
+   "fingerprint": "5a3e4428e8cc",
+   "human": false,
+   "rule": "exporter.deployment.chart-version-pinned-or-latest",
+   "source": "variables.tf#chart_version",
+   "status": "inferred",
+   "test": "",
+   "tests": []
+  }
+ },
+ "taxonomy": {
+  "domains": [
+   {
+    "areas": [
+     {
+      "description": "Installs the exporter chart from the bundled upstream charts as a named Helm release, updating chart dependencies and replacing an existing release when needed.",
+      "slug": "release-installation",
+      "title": "Release installation"
+     },
+     {
+      "description": "Chooses the Kubernetes namespace the exporter runs in, creates it if missing, and passes it through to the chart.",
+      "slug": "namespace-placement",
+      "title": "Namespace placement"
+     },
+     {
+      "description": "Pins the exporter to a specific chart version, or uses the latest one when no version is given.",
+      "slug": "chart-versioning",
+      "title": "Chart versioning"
+     }
+    ],
+    "description": "Installing the Carbon Intensity Exporter into a Kubernetes cluster as a Helm release.",
+    "slug": "exporter-deployment",
+    "title": "Exporter Deployment"
+   },
+   {
+    "areas": [
+     {
+      "description": "Lets callers supply their own Helm values, merged with the module's defaults, to adjust the exporter's settings.",
+      "slug": "custom-values",
+      "title": "Custom chart values"
+     },
+     {
+      "description": "Selects the carbon-intensity data source (WattTime or Electricity Maps) and supplies its credentials, keeping secrets marked sensitive.",
+      "slug": "carbon-data-providers",
+      "title": "Carbon data providers"
+     },
+     {
+      "description": "A ready-to-copy example showing how to call the module with provider credentials and read back its results.",
+      "slug": "usage-example",
+      "title": "Usage example"
+     }
+    ],
+    "description": "Tailoring how the deployed exporter behaves and where it gets carbon-intensity data.",
+    "slug": "exporter-configuration",
+    "title": "Exporter Configuration"
+   },
+   {
+    "areas": [
+     {
+      "description": "Reports the Helm release name and namespace the exporter ended up in.",
+      "slug": "release-details",
+      "title": "Release details"
+     },
+     {
+      "description": "Reports the chart version that was actually installed.",
+      "slug": "deployed-version",
+      "title": "Deployed version"
+     }
+    ],
+    "description": "Telling callers what was actually deployed so other infrastructure can build on it.",
+    "slug": "deployment-reporting",
+    "title": "Deployment Reporting"
+   },
+   {
+    "areas": [
+     {
+      "description": "Declares support for Terraform 1.0+ and OpenTofu 1.6+.",
+      "slug": "infrastructure-tool-versions",
+      "title": "Infrastructure tool versions"
+     },
+     {
+      "description": "Requires the HashiCorp Helm provider at version 2.0 or later.",
+      "slug": "helm-provider-requirement",
+      "title": "Helm provider requirement"
+     }
+    ],
+    "description": "The tool and provider versions the module works with.",
+    "slug": "compatibility",
+    "title": "Compatibility"
+   },
+   {
+    "areas": [
+     {
+      "description": "A standard set of make commands with built-in help, provider download and hook setup, plus build and run commands that explain why they don't apply.",
+      "slug": "project-commands",
+      "title": "Project commands"
+     },
+     {
+      "description": "Checks that the module and its example are valid Terraform configurations.",
+      "slug": "validation",
+      "title": "Validation"
+     },
+     {
+      "description": "Enforces canonical formatting, pre-commit hooks and lint rules for documented, typed, snake_case and pinned declarations, and fails clearly when the linter is missing.",
+      "slug": "linting-and-formatting",
+      "title": "Linting and formatting"
+     }
+    ],
+    "description": "Commands and quality checks maintainers use to work on the module.",
+    "slug": "developer-tooling",
+    "title": "Developer Tooling"
+   }
+  ]
+ }
+}
